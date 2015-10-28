@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en" ng-app="carta-admin">
+<head>
+  {% block head %}
+  <!-- <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"> -->
+  <title>{% block title %}{% endblock %} - 111 KITCHEN</title>
+  {% endblock %}
+
+  <!--css-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" type="text/css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css" />
+  <link rel="stylesheet" src="{{ url_for('static', filename='assets/css/app.css') }}" type="text/css" />
+  <link type="text/css" href="https://cdn.datatables.net/1.10.9/css/jquery.dataTables.min.css" rel="stylesheet" />
+  <link href="/static/assets/css/vis.min.css" rel="stylesheet" type="text/css" />
+  <link href="/static/assets/css/vis.css" rel="stylesheet" type="text/css" />
+  <!--js-->
+  <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js"></script>
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <script src="{{ url_for('static', filename='assets/js/ui-bootstrap-tpls-0.13.3.min.js') }}"></script>
+  <script type="text/javascript" src="https://cdn.datatables.net/1.10.9/js/jquery.dataTables.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/0.2.0/Chart.min.js"></script>
+</head>
+<body style="padding:10;margin-top:10px;margin-left:10px;margin-right:10px;">
+  <nav class="navbar navbar-default navbar-custom">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">111 KITCHEN</a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" ng-controller="HeaderController">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="#">Menu <span class="sr-only">(current)</span></a></li>
+          <!-- <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Search <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li role="menuitem"><a ng-class="{ active: isActive('/')}" href="/">Course Search</a></li>
+                <li role="menuitem"><a href="/student_search">Student Search</a></li>
+                <li role="menuitem"><a href="/instructor_search">Instructor Search</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+  <div id="content">{% block content %}{% endblock %}</div>
+  <hr>
+  <div id="footer">
+    {% block footer %}
+    <!-- This website is built by <a href="http://cs.stanford.edu/~sorathan">Tum Chaturapruek</a>. -->
+    {% endblock %}
+  </div>
+</body>
+  <script type="text/javascript" src="{{ url_for('static', filename='assets/js/app.js') }}"></script>
+</html>

@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block title %}Menu{% endblock %}
+{% block content %}  
+
+<script type="text/javascript">
+  $(document).ready(function(){
+      $('#menuTable').DataTable();
+  });
+</script>
+
+<h1>เมนูที่ออก: {{random_menu[2]}}</h1>
+
+
+<table class="table table-condensed table-striped" id="menuTable">
+<thead>
+<tr>
+  <th>ID</th>
+  <th>Category</th>
+  <th>Name</th>
+</tr>
+</thead>
+<tbody>
+{% for item in menu %}
+<tr>
+  {% set count = 0 %}
+  {% for thing in item %}
+  {% set count = count + 1 %}
+  {% if count <= 3 %}
+  <td>
+    {{ thing }}
+  </td>
+  {% endif %}
+  {% endfor %}  
+</tr>
+{% endfor %}
+</tbody>
+</table>
+
+{% endblock %}
