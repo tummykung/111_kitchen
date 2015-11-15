@@ -3,6 +3,7 @@ from flask import Flask, render_template, request, redirect, g
 import collections
 import mysql.connector
 import random
+from flask.ext.sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
 
